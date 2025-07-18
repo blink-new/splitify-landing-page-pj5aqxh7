@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 221 39% 11%; /* #0A0E1A - Deep navy like Blink */
+    --foreground: 0 0% 100%; /* Pure white text */
+    --card: 221 28% 16%; /* #1A1F2E - Slightly lighter for cards */
+    --card-foreground: 0 0% 100%;
+    --popover: 221 28% 16%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 195 100% 50%; /* #00D4FF - Bright cyan like Blink */
+    --primary-foreground: 221 39% 11%;
+    --secondary: 243 75% 59%; /* #4F46E5 - Purple accent */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 25% 27%; /* #334155 - Muted gray */
+    --muted-foreground: 215 20% 65%; /* #94A3B8 - Light gray text */
+    --accent: 195 100% 50%; /* Same as primary - cyan */
+    --accent-foreground: 221 39% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 25% 27%; /* #334155 - Subtle borders */
+    --input: 215 25% 27%;
+    --ring: 195 100% 50%; /* Cyan focus rings */
+    --chart-1: 195 100% 50%;
+    --chart-2: 243 75% 59%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 45 93% 47%;
+    --chart-5: 0 84% 60%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Blink-style star pattern background */
+.star-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgb(0 212 255 / 15%) 1px, transparent 0);
+  background-size: 50px 50px;
+}
+
+/* Subtle star dots */
+.star-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 10%) 1px, transparent 0);
+  background-size: 80px 80px;
+}
+
+/* Gradient text for hero */
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #00D4FF 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cyan gradient text like Blink */
+.cyan-gradient {
+  background: linear-gradient(135deg, #00D4FF 0%, #0EA5E9 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgb(0 212 255 / 30%);
+}
+
+.glow-cyan-strong {
+  box-shadow: 0 0 30px rgb(0 212 255 / 50%);
+}
